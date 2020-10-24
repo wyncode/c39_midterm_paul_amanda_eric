@@ -1,10 +1,18 @@
 import React from 'react';
-import Searchbar from '.components/Searchbar';
+import Searchbar from '../components/Searchbar';
+import { Container } from 'react-bootstrap';
 
 const Home = () => {
   // logo at the top
   //Big image
   //Search bar
-  <Searchbar />;
+
+  return (
+    <Container>
+      <Searchbar />
+    </Container>
+  );
   //text about the app
 };
+
+export default Home;
