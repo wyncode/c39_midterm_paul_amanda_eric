@@ -19,6 +19,7 @@ const Searchbar = () => {
       const data = await response.json();
       data.map((beer) => {
         beerNames.push(beer.name);
+        console.log(beerNames);
       });
 
       setApiData(beerNames);
