@@ -5,14 +5,12 @@ const Searchbar = () => {
   const [search, setSearch] = useState('lager');
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('this works!');
 
     const fetchResults = async () => {
-      let response = await fetch(
+      const response = await fetch(
         `https://api.punkapi.com/v2/beers?beer_name=${search}`
       );
-      let data = await response.json();
-      console.log(data);
+      const data = await response.json();
     };
     fetchResults();
   };
