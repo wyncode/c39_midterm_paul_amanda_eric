@@ -26,7 +26,7 @@ const Searchbar = () => {
       console.log(error);
     }
   }, [search]);
-  
+  console.log(apiData);
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -37,6 +37,7 @@ const Searchbar = () => {
           placeholder="Search a Beer!"
         />
       </Form>
+      <Results data={apiData} />
     </div>
   );
 };
