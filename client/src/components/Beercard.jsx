@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Beer = () => {
+const Beercard = () => {
 
     
 };
 
-export default Beer;
+export default Beercard;

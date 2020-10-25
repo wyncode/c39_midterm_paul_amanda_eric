@@ -1,13 +1,12 @@
 import React from 'react';
-import Beercard from '../components/Beercard';
 import Searchbar from '../components/Searchbar';
+// import { Row, Container } from 'react-bootstrap react';
 const Results = () => {
   {
     return (
       <div>
         <h1>App Name</h1>
         <Searchbar />
-        <Beercard />
       </div>
     );
   }

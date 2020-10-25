@@ -12,25 +12,21 @@ const Searchbar = () => {
 
   useEffect(() => {
     const fetchResults = async () => {
-      const beerNames = [];
       const response = await fetch(
         `https://api.punkapi.com/v2/beers?beer_name=${search}`
       );
       const data = await response.json();
-      data.map((beer) => {
-        beerNames.push(beer.name);
-        console.log(beerNames);
-      });
 
-      setApiData(beerNames);
+      setApiData(data);
     };
-    // console.log(apiData);
+
     try {
       fetchResults();
     } catch (error) {
       console.log(error);
     }
   }, [search]);
+  
   return (
     <div>
       <Form onSubmit={handleSubmit}>
