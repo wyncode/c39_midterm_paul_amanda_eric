@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Beerinfo from './pages/Beerinfo';
 import Results from './pages/Results';
-import Searchbar from './components/Searchbar';
+// import Searchbar from './components/Searchbar';
+import Randombeer from './pages/Randombeer';
 
 import './App.css';
 
@@ -12,11 +13,11 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
-
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/Results" component={Results} />
         <Route exact path="/beers/:id" component={Beerinfo} />
+        <Route exact path="/beers/random" component={Randombeer} />
       </Switch>
     </BrowserRouter>
   );

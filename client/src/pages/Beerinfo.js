@@ -27,6 +27,7 @@ const Beerinfo = () => {
       <h1>{beerInfo.name}</h1>;
       <img src={beerInfo.image_url} />
       <h2>{beerInfo.description}</h2>
+      <h2>TEst</h2>
     </div>
   );
 };
