@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div>
       <Link>Home</Link>
-      <Link>Random Beer</Link>
+      <Link to="/beers/random">Random Beer</Link>
     </div>
   );
 };
