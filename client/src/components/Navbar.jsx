@@ -6,8 +6,8 @@ const Navbar = () => {
   //Random Beer
   return (
     <div>
-      <Link>Home</Link>
-      <Link to="/beers/random">Random Beer</Link>
+      <Link to="/">Home</Link>
+      <Link to="/random">Random Beer</Link>
     </div>
   );
 };

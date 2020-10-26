@@ -8,6 +8,7 @@ import Searchbar from '../components/Searchbar';
 const Results = () => {
   const [search, setSearch] = useState();
   const [apiData, setApiData] = useState([]);
+  const [sort, setSort] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,30 +30,44 @@ const Results = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [search]);
+  }, [search, sort]);
+
+  const handleSort = () => {
+    const newArray = apiData.sort(function (a, b) {
+      return a.abv - b.abv;
+    });
+    setSort(!sort);
+    // setApiData(newArray);
+  };
+
   console.log(apiData);
   return (
     <div>
       <Searchbar submit={handleSubmit} />
+
       <Container>
         <h1>Let us paw you a drink</h1>
         {/* <Searchbar /> */}
+        <button onClick={handleSort}>Sort by ABV</button>
         <Row>
           {apiData &&
             apiData.map((beer) => (
-              <Card key={beer.id} style={{ width: 200, margin: 5 }}>
-                <a href={`/beers/${beer.id}`}>
-                  <Card.Img
-                    variant="top"
-                    src={beer.image_url}
-                    alt={beer.name}
-                    width={200}
-                  />
-                </a>
-                <Card.Body>
-                  <Card.Title>{beer.name}</Card.Title>
-                </Card.Body>
-              </Card>
+              <div>
+                <Card key={beer.id} style={{ width: 200, margin: 5 }}>
+                  <a href={`/beers/${beer.id}`}>
+                    <Card.Img
+                      variant="top"
+                      src={beer.image_url}
+                      alt={beer.name}
+                      width={200}
+                    />
+                  </a>
+
+                  <Card.Body>
+                    <Card.Title>{beer.name}</Card.Title>
+                  </Card.Body>
+                </Card>
+              </div>
             ))}
         </Row>
       </Container>
