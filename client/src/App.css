@@ -1,3 +1,10 @@
 /* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
 
 /* END DEMO */
+
+.active {
+  background-color: red;
+}
+li {
+  font-family: 'Oswald', sans-serif;
+}
