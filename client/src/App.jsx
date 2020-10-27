@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
 import Beerinfo from './pages/Beerinfo';
 import Results from './pages/Results';
 // import Searchbar from './components/Searchbar';

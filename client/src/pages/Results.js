@@ -3,6 +3,7 @@ import { Row, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import classNames from 'classnames';
 import Searchbar from '../components/Searchbar';
+import dog from '../images/dog.jpg';
 
 const Results = () => {
   const [search, setSearch] = useState();
@@ -102,16 +103,15 @@ const Results = () => {
                   <a href={`/beers/${beer.id}`}>
                     <Card.Img
                       variant="top"
-                      src={beer.image_url}
+                      src={beer.image_url == null ? dog : beer.image_url}
                       alt={beer.name}
                       width={200}
                     />
                   </a>
-
-                  <Card.Body>
-                    <Card.Title>{beer.name}</Card.Title>
-                  </Card.Body>
                 </Card>
+                <Card.Body>
+                  <Card.Title>{beer.name}</Card.Title>
+                </Card.Body>
               </div>
             ))}
         </Row>
