@@ -2,9 +2,34 @@
 
 /* END DEMO */
 
-.active {
+/* .active {
   background-color: red;
+} */
+.anchorDog {
+  width: 100px;
 }
-li {
+.brewdog {
+  height: 100%;
+  width: 100%;
+}
+
+.navDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+Nav.item {
+  color: black;
+}
+.link {
   font-family: 'Oswald', sans-serif;
+  color: black;
+  size: 5rem;
+}
+.link:hover {
+  color: #ffe05d;
+}
+.linkText {
+  size: 5rem;
 }

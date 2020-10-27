@@ -1,24 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+import Image from 'react-bootstrap/Image';
+import dog from '../images/dog.jpg';
 
 const Navbar = () => {
   //links :
   //Random Beer
   return (
-    <div>
-      <ul>
-        <img
-          className="brewdog"
-          src="data:image/png;base64,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"
-        />
-        <Link to="/">
-          <li>PAWUADRINK</li>
-        </Link>
-        <Link to="/random">
-          <li>Random Beer</li>
-        </Link>
-      </ul>
+    <div className="navDiv">
+      <a className="anchorDog" href="https://www.brewdog.com/usa/">
+        <img className="brewdog" src={dog} />
+      </a>
+      <Nav defaultActiveKey="/home">
+        <Nav.Item>
+          <Nav.Link className="link" href="/">
+            PAWYOUADRINK
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className="link" href="/random" eventKey="link-1">
+            Random Beer
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
     </div>
+    // <div className="navDiv">
+    //   <ul className="navList">
+    //     <img className="brewdog" src={dog} />
+    //     <Link to="/">
+    //       <li>PAWUADRINK</li>
+    //     </Link>
+    //     <Link to="/random">
+    //       <li>Random Beer</li>
+    //     </Link>
+    //   </ul>
+    // </div>
   );
 };
 
