@@ -19,13 +19,15 @@
   justify-content: flex-start;
   align-items: center;
 }
-Nav.item {
+/* Nav.item {
   color: black;
-}
+} */
 .link {
   font-family: 'Oswald', sans-serif;
   color: black;
   size: 5rem;
+  transition-duration: 1s;
+  transition-timing-function: linear;
 }
 .link:hover {
   color: #ffe05d;

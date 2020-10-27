@@ -1,30 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-import Image from 'react-bootstrap/Image';
+import { motion } from 'framer-motion';
 import dog from '../images/dog.jpg';
 
 const Navbar = () => {
   //links :
   //Random Beer
   return (
-    <div className="navDiv">
+    <motion.div
+      className="navDiv"
+      // whileHover={{ scale: 1.0 }}
+      // transition={{ duration: 2 }}
+    >
       <a className="anchorDog" href="https://www.brewdog.com/usa/">
-        <img className="brewdog" src={dog} />
+        <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
+          <img className="brewdog" src={dog} />
+        </motion.div>
       </a>
+
       <Nav defaultActiveKey="/home">
         <Nav.Item>
-          <Nav.Link className="link" href="/">
-            PAWYOUADRINK
-          </Nav.Link>
+          <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
+            <Nav.Link className="link" href="/">
+              <h4>PAWYOUADRINK</h4>
+            </Nav.Link>
+          </motion.div>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="link" href="/random" eventKey="link-1">
-            Random Beer
-          </Nav.Link>
+          <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
+            <Nav.Link className="link" href="/random" eventKey="link-1">
+              <h4>Random Beer</h4>
+            </Nav.Link>
+          </motion.div>
         </Nav.Item>
       </Nav>
-    </div>
+    </motion.div>
     // <div className="navDiv">
     //   <ul className="navList">
     //     <img className="brewdog" src={dog} />
