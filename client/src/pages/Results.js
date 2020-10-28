@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Col, Button, Container } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import classNames from 'classnames';
 import Searchbar from '../components/Searchbar';
 import dog from '../images/dog.jpg';
+import brewdog from '../images/dogs.jpg';
+import { motion } from 'framer-motion';
 
 const Results = () => {
   const [search, setSearch] = useState();
@@ -65,54 +67,94 @@ const Results = () => {
   };
 
   return (
-    <div>
-      <Searchbar submit={handleSubmit} />
+      <div className="main">
+      <div className="image">
+    <img src={brewdog} alt="brewdog" />
+    </div>
 
-      <Container>
-        <h1>Let us paw you a drink</h1>
-        {/* <Searchbar /> */}
-        <button
+      <div class="fast">Let us paw <span role="img" alt="dog paw">🐾</span> </div><div class="flicker"> you a drink ! </div>
+
+      <div className="searchdiv">
+        <Searchbar className="search" submit={handleSubmit} />
+      </div>
+
+      <div className="buttondiv">
+        <Button
+          variant="outline-dark"
           className={classNames({ active: isActiveSortOption('abv', 'asc') })}
           onClick={() => handleSortClick('abv', 'asc')}
         >
           Sort by ABV - ASC
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="outline-dark"
           className={classNames({ active: isActiveSortOption('abv', 'desc') })}
           onClick={() => handleSortClick('abv', 'desc')}
         >
           Sort by ABV - DESC
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="outline-dark"
           className={classNames({ active: isActiveSortOption('ibu', 'asc') })}
           onClick={() => handleSortClick('ibu', 'asc')}
         >
           Sort by IBU - ASC
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="outline-dark"
           className={classNames({ active: isActiveSortOption('ibu', 'desc') })}
           onClick={() => handleSortClick('ibu', 'desc')}
         >
           Sort by IBU - DESC
-        </button>
-        <Row>
+        </Button>
+      </div>
+      
+
+      <Container>
+        <Row md={4}>
+          <Col></Col>
+          <Col></Col>
+          <Col></Col>
+          <Col></Col>
+
           {sortedBreweries &&
             sortedBreweries.map((beer) => (
-              <div>
-                <Card key={beer.id} style={{ width: 200, margin: 5 }}>
+              <div> 
+                <motion.div
+                whileHover ={{scale:1.2}}
+                transition={{duration: 2}}>
+                <Card
+                  bg="dark"
+                  text="white"
+                  border="dark"
+                  key={beer.id}
+                  style={{ width: 200, margin: 5 }}
+                >
                   <a href={`/beers/${beer.id}`}>
                     <Card.Img
                       variant="top"
                       src={beer.image_url == null ? dog : beer.image_url}
                       alt={beer.name}
-                      width={200}
+                      // width={100}
                     />
                   </a>
+
+                  <Card.Body>
+                    <Card.Title>{beer.name}</Card.Title>
+                    <Card.Text>
+                      <p>
+                        <b>Beer IBU:</b> {beer.ibu}
+                      </p>
+                      <p>
+                        <b>Beer ABV:</b> {beer.abv}%
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
                 </Card>
-                <Card.Body>
-                  <Card.Title>{beer.name}</Card.Title>
-                </Card.Body>
+                </motion.div>
               </div>
+              
+
             ))}
         </Row>
       </Container>
