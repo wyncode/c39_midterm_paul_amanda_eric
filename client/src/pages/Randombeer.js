@@ -23,12 +23,11 @@ const Randombeer = () => {
       alert('Error');
     }
   }, []);
-  //   console.log(beerInfo);
+
   return (
     <div>
       <button onClick={handleClick}>Back</button>
       <button onClick={refreshPage}>Give Me Another!</button>
-      <h1>Test</h1>
       <h1>{randomBeerInfo.name}</h1>;
       <img src={randomBeerInfo.image_url} />
       <h2>{randomBeerInfo.description}</h2>

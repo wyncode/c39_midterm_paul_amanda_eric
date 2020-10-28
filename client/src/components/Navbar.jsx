@@ -5,14 +5,8 @@ import { motion } from 'framer-motion';
 import dog from '../images/dog.jpg';
 
 const Navbar = () => {
-  //links :
-  //Random Beer
   return (
-    <motion.div
-      className="navDiv"
-      // whileHover={{ scale: 1.0 }}
-      // transition={{ duration: 2 }}
-    >
+    <motion.div className="navDiv">
       <a className="anchorDog" href="https://www.brewdog.com/usa/">
         <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
           <img className="brewdog" src={dog} />
@@ -36,17 +30,6 @@ const Navbar = () => {
         </Nav.Item>
       </Nav>
     </motion.div>
-    // <div className="navDiv">
-    //   <ul className="navList">
-    //     <img className="brewdog" src={dog} />
-    //     <Link to="/">
-    //       <li>PAWUADRINK</li>
-    //     </Link>
-    //     <Link to="/random">
-    //       <li>Random Beer</li>
-    //     </Link>
-    //   </ul>
-    // </div>
   );
 };
 

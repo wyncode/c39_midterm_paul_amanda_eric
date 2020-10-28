@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import classNames from 'classnames';
 import Searchbar from '../components/Searchbar';
 import dog from '../images/dog.jpg';
+import brewdog from '../images/brewdog.jpg';
 
 const Results = () => {
   const [search, setSearch] = useState();
@@ -65,12 +66,15 @@ const Results = () => {
   };
 
   return (
-    <div>
-      <Searchbar submit={handleSubmit} />
-
-      <Container>
+    <div className="main">
+      <img src={brewdog} alt="brewdog" />
+      <div className="searchdiv">
         <h1>Let us paw you a drink</h1>
         {/* <Searchbar /> */}
+        <Searchbar submit={handleSubmit} />
+      </div>
+
+      <div className="buttondiv">
         <button
           className={classNames({ active: isActiveSortOption('abv', 'asc') })}
           onClick={() => handleSortClick('abv', 'asc')}
@@ -95,6 +99,8 @@ const Results = () => {
         >
           Sort by IBU - DESC
         </button>
+      </div>
+      <Container>
         <Row>
           {sortedBreweries &&
             sortedBreweries.map((beer) => (
@@ -108,6 +114,7 @@ const Results = () => {
                       width={200}
                     />
                   </a>
+                  <p>{beer.ibu} IBUs</p>
                 </Card>
                 <Card.Body>
                   <Card.Title>{beer.name}</Card.Title>
