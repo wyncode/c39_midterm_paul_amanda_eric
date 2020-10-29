@@ -25,7 +25,7 @@ const Beerinfo = () => {
     <div>
       <button onClick={handleClick}>Back</button>
       <h1>{beerInfo.name}</h1>;
-      <img src={beerInfo.image_url} />
+      <img src={beerInfo.image_url} alt="beer photos" />
       <h2>{beerInfo.description}</h2>
       <h2>TEst</h2>
     </div>

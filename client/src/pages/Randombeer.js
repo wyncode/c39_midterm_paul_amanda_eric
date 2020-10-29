@@ -30,7 +30,7 @@ const Randombeer = () => {
       <button onClick={refreshPage}>Give Me Another!</button>
       <h1>Test</h1>
       <h1>{randomBeerInfo.name}</h1>;
-      <img src={randomBeerInfo.image_url} />
+      <img src={randomBeerInfo.image_url} alt="random beer info" />
       <h2>{randomBeerInfo.description}</h2>
     </div>
   );

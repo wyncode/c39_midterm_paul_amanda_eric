@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import { motion } from 'framer-motion';
 import dog from '../images/dog.jpg';
@@ -15,7 +14,7 @@ const Navbar = () => {
     >
       <a className="anchorDog" href="https://www.brewdog.com/usa/">
         <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 1 }}>
-          <img className="brewdog" src={dog} />
+          <img className="brewdog" src={dog} alt="brew dog" />
         </motion.div>
       </a>
 
