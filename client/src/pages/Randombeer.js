@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const Randombeer = () => {
   const history = useHistory();
@@ -23,12 +24,12 @@ const Randombeer = () => {
       alert('Error');
     }
   }, []);
-  //   console.log(beerInfo);
+
   return (
     <div>
+      <Navbar />
       <button onClick={handleClick}>Back</button>
       <button onClick={refreshPage}>Give Me Another!</button>
-      <h1>Test</h1>
       <h1>{randomBeerInfo.name}</h1>;
       <img src={randomBeerInfo.image_url} alt="random beer info" />
       <h2>{randomBeerInfo.description}</h2>
