@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const Beerinfo = () => {
   const history = useHistory();
@@ -23,6 +24,7 @@ const Beerinfo = () => {
   console.log(beerInfo);
   return (
     <div>
+      <Navbar />
       <button onClick={handleClick}>Back</button>
       <h1>{beerInfo.name}</h1>;
       <img src={beerInfo.image_url} alt="beer photos" />
