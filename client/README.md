@@ -1,4 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## PAWYOUADRINK
+
+## What is this?
+
+Beer geeks, rejoice! PAWYOUADRINK allows you to programmatically search through Brewdog Brewery's complete beer catalog, courtesy of the PUNK API.
+
+## Why
+
+Craft beer enthusiasts want to know their beers inside and out. PAWYOUADRINK allows users to search Brewdog's extensive inventory, filter results by ABV and IBU, and re-order them in ascending or descending order. Want to expand your palette? PAWYOUADRINK also provides a randomized beer selection that spans the entire catalog. Selecting a specific beer will yield the holy grail of stats: the beer's hops, malt, yeast, brewing process, and suggested food pairings.
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -65,4 +75,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify -->

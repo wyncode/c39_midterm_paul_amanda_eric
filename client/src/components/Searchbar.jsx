@@ -1,18 +1,17 @@
-// import React, { useState, useEffect } from 'react';
-
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import Results from '../pages/Results';
+// import Results from '../pages/Results';
+
 
 const Searchbar = ({ submit }) => {
   return (
     <div>
-      <Form onSubmit={submit}>
-        <Form.Control
+      <Form  onSubmit={submit}>
+        <Form.Control style={{textAlign: 'center'}}
           id="searchbar"
           size="lg"
           type="text"
-          placeholder="Search a Beer!"
+          placeholder="Search a Beer! 🔍"
         />
       </Form>
 
