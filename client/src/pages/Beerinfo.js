@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import dog from '../images/dog.jpg'
+import Button from 'react-bootstrap/Button'
 
 const Beerinfo = () => {
   const history = useHistory();
@@ -22,12 +24,23 @@ const Beerinfo = () => {
   }, [id]);
   console.log(beerInfo);
   return (
-    <div>
-      <button onClick={handleClick}>Back</button>
-      <h1>{beerInfo.name}</h1>;
-      <img src={beerInfo.image_url} />
-      <h2>{beerInfo.description}</h2>
-      <h2>TEst</h2>
+  
+    <div className="beerPage">
+      {/* <button onClick={handleClick}>Back</button> */}
+      <Button onClick={handleClick} variant="dark">Back</Button>{' '}
+      <div className="background"></div> 
+      <h1 className= "beerName" >{beerInfo.name}</h1>
+      <div className="beer-picture">
+      <img src={beerInfo.image_url == null ? dog : beerInfo.image_url}  className="beerImage"/></div>
+      <p className="beerDescription"> FACTOIDS: {beerInfo.description}</p>
+      <p className= "foodPairing"> Recommended food pairing: {beerInfo.food_pairing}</p>
+      <p className="beerABV"> abv: {beerInfo.abv}</p>
+      <p className="beerIBU"> ibu: {beerInfo.ibu}</p>
+      <h2> Interested in brewing your own? </h2> 
+      <h3>Try this: </h3>
+      <p className="beerBrew"> {beerInfo.brewers_tips}</p>
+  
+      
     </div>
   );
 };

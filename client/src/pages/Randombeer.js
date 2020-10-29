@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import dog from '../images/dog.jpg'
+import Button from 'react-bootstrap/Button'
 
 const Randombeer = () => {
   const history = useHistory();
@@ -25,13 +27,18 @@ const Randombeer = () => {
   }, []);
   //   console.log(beerInfo);
   return (
-    <div>
-      <button onClick={handleClick}>Back</button>
-      <button onClick={refreshPage}>Give Me Another!</button>
-      <h1>Test</h1>
-      <h1>{randomBeerInfo.name}</h1>;
-      <img src={randomBeerInfo.image_url} />
-      <h2>{randomBeerInfo.description}</h2>
+     <div className="randombeerbackground">
+      <Button onClick={handleClick} variant="dark">Back</Button>{' '}
+      <Button onClick={refreshPage} variant="dark">Give Me Another!</Button>{' '}
+      <h1 className= "randomName">{randomBeerInfo.name}</h1>;
+      <img src=  {randomBeerInfo.image_url == null ? dog : randomBeerInfo.image_url}/>
+      <p className= "randomDescription">FACTOIDS: {randomBeerInfo.description}</p>
+      <p className= "randomfoodPairing">RECOMMENDED FOOD PAIRING: {randomBeerInfo.food_pairing}</p>
+      <p className="randombeerABV"> ABV: {randomBeerInfo.abv}</p>
+      <p className="randombeerIBU"> IBU: {randomBeerInfo.ibu}</p>
+      <h2> Interested in brewing your own? </h2> 
+      <p className ="line"> Try this: </p>
+      <p className="randombeerBrew"> {randomBeerInfo.brewers_tips}</p>
     </div>
   );
 };
