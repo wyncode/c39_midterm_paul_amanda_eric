@@ -7,11 +7,7 @@ const Home = () => {
   const history = useHistory();
   const handleAge = (event) => {
     event.preventDefault();
-    // if (Number(event.target.elements.age.value) >= 21) {
-    //   history.push('/Random');
-    // } else {
-    //   alert('You must be 21 to enter!');
-    // }
+
     const dob = new Date(event.target.elements.age.value);
     const now = new Date();
     if (now - dob >= 662810000000) {
