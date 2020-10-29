@@ -158,11 +158,14 @@
 .homediv {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #eeeeee;
+  padding-top: 20px;
+  height: 100vh;
 }
 .homediv h1,
-h2 {
+.homediv h2 {
   font-family: 'Oswald', sans-serif;
   color: black;
 }

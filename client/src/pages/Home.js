@@ -29,7 +29,13 @@ const Home = () => {
         <Form.Label>
           <h2 className>Are you old enough?</h2>
         </Form.Label>
-        <Form.Control size="lg" type="text" id="age" placeholder="MM/DD/YYYY" />
+        <Form.Control
+          style={{ textAlign: 'center' }}
+          size="lg"
+          type="text"
+          id="age"
+          placeholder="MM/DD/YYYY"
+        />
       </Form>
     </div>
   );

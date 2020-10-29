@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const Randombeer = () => {
   const history = useHistory();
@@ -26,6 +27,7 @@ const Randombeer = () => {
 
   return (
     <div>
+      <Navbar />
       <button onClick={handleClick}>Back</button>
       <button onClick={refreshPage}>Give Me Another!</button>
       <h1>{randomBeerInfo.name}</h1>;
