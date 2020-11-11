@@ -42,19 +42,10 @@ const Results = () => {
     }
   }, [search]);
 
-  console.log('what are my values', {
-    stateObj: sortOptions,
-    keyIWant: sortOptions.sortKey,
-    directionIWant: sortOptions.sortDirection
-  });
-
   const sortedBreweries = apiData.sort(function (a, b) {
     const aValue = a[sortOptions.sortKey];
     const bValue = b[sortOptions.sortKey];
 
-    // at the moment this will only work for numbers
-    // if you want to sort by strings, we will need to extend
-    // the logic to handle that
     return sortOptions.sortDirection === 'asc'
       ? aValue - bValue
       : bValue - aValue;
